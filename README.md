@@ -17,6 +17,8 @@ This project was created to meet the following technical challenge:
     - Choose your backend storage technology of choice. Motivate your choice.
     - Add some tests and a way to package and deploy your software as a Docker container.
 
+7 months ago I got the job with this technical solution.
+
 # REST API in Python for managing software packages
 
 ## The API
@@ -204,3 +206,4 @@ or
 ```
 runTest.cmd P
 ```
+
