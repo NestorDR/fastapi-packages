@@ -1,0 +1,77 @@
+## Try HTTP GET using a valid API key fbd1d865-9ae8-491f-98b8-1f522c52eb02 - (function test_apikey) 
+{
+    "message": "This is a secure endpoint"
+}
+
+## Try HTTP GET using a invalid API key foo-foo-foo-foo - (function test_apikey) 
+{
+    "detail": "Wrong, revoked, or expired API key."
+}
+
+## Get paginated list of Packages using HTTP GET (offset/skip: 0, limit/take: 3) - (function test_get_all) 
+[
+    {
+        "id": 1,
+        "name": "package #1",
+        "version": "0.0.1",
+        "status": "Created"
+    },
+    {
+        "id": 2,
+        "name": "package #2",
+        "version": "0.0.2a",
+        "status": "Created"
+    },
+    {
+        "id": 3,
+        "name": "package #3",
+        "version": "0.0.3b",
+        "status": "Active"
+    }
+]
+
+## Get a single Package with identifier 3 using HTTP verb GET - (function test_get_one) 
+{
+    "id": 3,
+    "name": "package #3",
+    "version": "0.0.3b",
+    "status": "Active"
+}
+
+## Request a nonexistent package with identifier -1 using HTTP verb GET - (function test_get_one) 
+null
+
+## Create a package using HTTP verb POST - (function test_create) 
+{
+    "id": 34,
+    "name": "Package created in test on 2022-04-29 18:49",
+    "version": "0.1.6",
+    "status": "Created"
+}
+
+## Create a packet with an empty value in the attribute name, using the HTTP POST verb - (function test_create) 
+{
+    "detail": "Invalid name."
+}
+
+## Update package with identifier 34 using HTTP verb PUT - (function test_update) 
+{
+    "id": 34,
+    "name": "Package updated in test on 2022-04-29 18:49",
+    "version": "0.4.11",
+    "status": "Created"
+}
+
+## Update package with identifier 34 and bad status_id, using HTTP verb PUT - (function test_update) 
+{
+    "detail": "Status identifier 9 of the package, invalid."
+}
+
+## Update a nonexistent package with identifier -1 using HTTP verb PUT - (function test_update) 
+null
+
+## Delete a single Package with identifier 34 using HTTP verb DELETE - (function test_delete) 
+{
+    "message": "Package with identifier: 34 deleted successfully."
+}
+
